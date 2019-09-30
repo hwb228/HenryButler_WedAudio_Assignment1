@@ -1,0 +1,1014 @@
+<html>
+	<head>	
+<title>Parks of NYC</title>
+<style>
+body{ background: #C4F2FF; }
+button{border:none; cursor: pointer; outline:none;}
+button#playpauseUnion{
+	background:url(Pics/Play.png);
+	width: 20px;
+	height: 18px;
+}
+button#muteUnion{
+	background:url(Pics/Unmute.png);
+	width: 20px;
+	height: 18px;
+}
+input#audiopositionUnion{
+	width: 300px;
+	
+}
+input#volumesetUnion{
+	width:100px;
+
+}
+button#MonobtnU{
+	background:url(Pics/MonoYes.png);
+	width: 100px;
+	height: 34px;	
+}
+button#StereobtnU{
+	background:url(Pics/Stereo.png);
+	width: 100px;
+	height: 34px;	
+}
+button#BinauralbtnU{
+	background:url(Pics/Binaural.png);
+	width: 100px;
+	height: 34px;	
+}
+
+button#playpauseTomp1{
+	background:url(Pics/Play.png);
+	width: 20px;
+	height: 18px;
+}
+button#muteTomp1{
+	background:url(Pics/Unmute.png);
+	width: 20px;
+	height: 18px;
+}
+input#audiopositionTomp1{
+	width: 300px;
+	
+}
+input#volumesetTomp1{
+	width:100px;
+
+}
+button#MonobtnT1{
+	background:url(Pics/MonoYes.png);
+	width: 100px;
+	height: 34px;	
+}
+button#StereobtnT1{
+	background:url(Pics/Stereo.png);
+	width: 100px;
+	height: 34px;	
+}
+button#BinauralbtnT1{
+	background:url(Pics/Binaural.png);
+	width: 100px;
+	height: 34px;	
+}
+
+button#playpauseTomp2{
+	background:url(Pics/Play.png);
+	width: 20px;
+	height: 18px;
+}
+button#muteTomp2{
+	background:url(Pics/Unmute.png);
+	width: 20px;
+	height: 18px;
+}
+input#audiopositionTomp2{
+	width: 300px;
+	
+}
+input#volumesetTomp2{
+	width:100px;
+
+}
+button#MonobtnT2{
+	background:url(Pics/MonoYes.png);
+	width: 100px;
+	height: 34px;	
+}
+button#StereobtnT2{
+	background:url(Pics/Stereo.png);
+	width: 100px;
+	height: 34px;	
+}
+button#BinauralbtnT2{
+	background:url(Pics/Binaural.png);
+	width: 100px;
+	height: 34px;	
+}
+
+button#playpauseW1{
+	background:url(Pics/Play.png);
+	width: 20px;
+	height: 18px;
+}
+button#muteWash1{
+	background:url(Pics/Unmute.png);
+	width: 20px;
+	height: 18px;
+}
+input#audiopositionWash1{
+	width: 300px;
+	
+}
+input#volumesetWash1{
+	width:100px;
+
+}
+button#MonobtnW1{
+	background:url(Pics/MonoYes.png);
+	width: 100px;
+	height: 34px;	
+}
+button#StereobtnW1{
+	background:url(Pics/Stereo.png);
+	width: 100px;
+	height: 34px;	
+}
+button#BinauralbtnW1{
+	background:url(Pics/Binaural.png);
+	width: 100px;
+	height: 34px;	
+}
+
+
+
+button#playpauseW2{
+	background:url(Pics/Play.png);
+	width: 20px;
+	height: 18px;
+}
+button#muteWash2{
+	background:url(Pics/Unmute.png);
+	width: 20px;
+	height: 18px;
+}
+input#audiopositionWash2{
+	width: 300px;
+	
+}
+input#volumesetWash2{
+	width:100px;
+
+}
+button#MonobtnW2{
+	background:url(Pics/MonoYes.png);
+	width: 100px;
+	height: 34px;	
+}
+button#StereobtnW2{
+	background:url(Pics/Stereo.png);
+	width: 100px;
+	height: 34px;	
+}
+button#BinauralbtnW2{
+	background:url(Pics/Binaural.png);
+	width: 100px;
+	height: 34px;	
+}
+</style>
+	</head>
+	<body>
+<script>
+var Tomp1M, Tomp1S, Tomp1B, playT1, muteT1, audiopositionT1, searchingT1, volumesetT1, newpositionT1, ntT1, MonobtnT1, StereobtnT1, BinauralbtnT1, Tomp2M, Tomp2S, Tomp2B, playT2, muteT2, audiopositionT2, searchingT2, volumesetT2, newpositionT2, ntT2, MonobtnT2, StereobtnT2, BinauralbtnT2, UnionM, UnionS, UnionB, playU, muteU, audiopositionU, searchingU, volumesetU, newpositionU, ntU, MonobtnU, StereobtnU, BinauralbtnU, Wash1M, Wash1S, Wash1B, playW1, muteW1, audiopositionW1, searchingW1, volumesetW1, newpositionW1, ntW1, MonobtnW1, StereobtnW1, BinauralbtnW1, Wash2M, Wash2S, Wash2B, playW2, muteW2, audiopositionW2, searchingW2, volumesetW2, newpositionW2, ntW2, MonobtnW2, StereobtnW2, BinauralbtnW2;;
+
+
+function initAudioPlayer() {
+	
+	// Defining Variables
+	UnionM=document.getElementById("UnionM");
+	UnionS=document.getElementById("UnionS");
+	UnionB=document.getElementById("UnionB");
+	playU=document.getElementById("playpauseUnion");
+	muteU=document.getElementById("muteUnion");
+	audiopositionU=document.getElementById("audiopositionUnion");
+	volumesetU=document.getElementById("volumesetUnion");
+	MonobtnU=document.getElementById("MonobtnU");
+	StereobtnU=document.getElementById("StereobtnU");
+	BinauralbtnU=document.getElementById("BinauralbtnU");
+	MonobtnT1=document.getElementById("MonobtnT1");
+	StereobtnT1=document.getElementById("StereobtnT1");
+	BinauralbtnT1=document.getElementById("BinauralbtnT1");
+	MonobtnT2=document.getElementById("MonobtnT2");
+	StereobtnT2=document.getElementById("StereobtnT2");
+	BinauralbtnT2=document.getElementById("BinauralbtnT2");
+	MonobtnW1=document.getElementById("MonobtnW1");
+	StereobtnW1=document.getElementById("StereobtnW1");
+	BinauralbtnW1=document.getElementById("BinauralbtnW1");
+	MonobtnW2=document.getElementById("MonobtnW2");
+	StereobtnW2=document.getElementById("StereobtnW2");
+	BinauralbtnW2=document.getElementById("BinauralbtnW2");
+
+
+	// When to implement functions
+	playU.addEventListener("click", playPauseU);
+	muteU.addEventListener("click", muteUnmuteU);
+	audiopositionU.addEventListener("mousedown", function(event) { searchingU=true; setPositionU(event);});
+	audiopositionU.addEventListener("mousemove", function(event) { setPositionU(event);});
+	audiopositionU.addEventListener("mouseup", function() { searchingU=false; });
+	volumesetU.addEventListener("mousemove", setVolumeU);
+	UnionM.addEventListener("timeupdate", timeupdateU);
+	MonobtnU.addEventListener("click", ChangeMU);
+	StereobtnU.addEventListener("click", ChangeSU);
+	BinauralbtnU.addEventListener("click", ChangeBU);
+	MonobtnT1.addEventListener("click", ChangeMT1);
+	StereobtnT1.addEventListener("click", ChangeST1);
+	BinauralbtnT1.addEventListener("click", ChangeBT1);
+	MonobtnT2.addEventListener("click", ChangeMT2);
+	StereobtnT2.addEventListener("click", ChangeST2);
+	BinauralbtnT2.addEventListener("click", ChangeBT2);
+	MonobtnW1.addEventListener("click", ChangeMW1);
+	StereobtnW1.addEventListener("click", ChangeSW1);
+	BinauralbtnW1.addEventListener("click", ChangeBW1);
+	MonobtnW2.addEventListener("click", ChangeMW2);
+	StereobtnW2.addEventListener("click", ChangeSW2);
+	BinauralbtnW2.addEventListener("click", ChangeBW2);
+
+	
+
+	// Functions
+	function playPauseU() {
+		if(UnionM.paused && UnionS.paused && UnionB.paused) {
+			UnionM.play();
+			UnionS.play();
+			UnionB.play();
+			playU.style.background = "url(Pics/Pause.png) no-repeat";
+		} else { 
+			UnionM.pause();
+			UnionS.pause();
+			UnionB.pause();
+			playU.style.background = "url(Pics/Play.png) no-repeat";
+		}
+	}
+	
+	function muteUnmuteU() {
+		if (UnionM.muted && UnionS.muted && UnionB.muted) {
+			if (UnionRec=1){
+				UnionM.muted=false;
+				UnionS.muted=true;
+				UnionB.muted=true;
+				muteU.style.background = "url(Pics/Unmute.png) no-repeat";
+			} else if (UnionRec=2){
+				UnionM.muted=true;
+				UnionS.muted=false;
+				UnionB.muted=true;
+				muteU.style.background = "url(Pics/Unmute.png) no-repeat";
+			} else if (UnionRec=3){
+				UnionM.muted=true;
+				UnionS.muted=true;
+				UnionB.muted=false;
+				muteU.style.background = "url(Pics/Unmute.png) no-repeat";
+			}	
+		} else {
+			UnionM.muted=true;
+			UnionS.muted=true;
+			UnionB.muted=true;
+			muteU.style.background = "url(Pics/Mute.png) no-repeat";
+		}
+
+	}	
+
+	function ChangeMU() {
+		if (muteU.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnU.style.background= "url(Pics/MonoYes.png) no-repeat";
+			StereobtnU.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnU.style.background= "url(Pics/Binaural.png) no-repeat";
+			UnionM.muted=false;
+			UnionS.muted=true;
+			UnionB.muted=true;
+		} else {
+			UnionM.muted=true;
+			UnionS.muted=true;
+			UnionB.muted=true;
+		}
+	}
+
+	function ChangeSU() {
+		if (muteU.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnU.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnU.style.background= "url(Pics/StereoYes.png) no-repeat";
+			BinauralbtnU.style.background= "url(Pics/Binaural.png) no-repeat";
+			UnionM.muted=true;
+			UnionS.muted=false;
+			UnionB.muted=true;
+		} else {
+			UnionM.muted=true;
+			UnionS.muted=true;
+			UnionB.muted=true;
+		}
+	}
+
+	
+	function ChangeBU() {
+		if (muteU.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnU.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnU.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnU.style.background= "url(Pics/BinauralYes.png) no-repeat";
+			UnionM.muted=true;
+			UnionS.muted=true;
+			UnionB.muted=false;
+		} else {
+			UnionM.muted=true;
+			UnionS.muted=true;
+			UnionB.muted=true;
+		}
+	}
+	
+	function setVolumeU() {
+		UnionM.volume = volumesetU.value/100;
+		UnionS.volume = volumesetU.value/100;
+		UnionB.volume = volumesetU.value/100;
+	}
+
+	function setPositionU(event) {
+		if (searchingU==true) {
+			audiopositionU.value = event.clientX  - audiopositionU.offsetLeft; 
+			newpositionU = UnionM.duration * (audiopositionU.value/300);
+			UnionM.currentTime = newpositionU;
+			UnionS.currentTime = newpositionU;
+			UnionB.currentTime = newpositionU;
+	
+		}
+	}
+	function timeupdateU() {
+		ntU = UnionM.currentTime * (300/UnionM.duration);
+		audiopositionU.value = ntU; 
+		
+	}
+
+	// Defining Variables
+	playT1=document.getElementById("playpauseTomp1");
+	muteT1=document.getElementById("muteTomp1");
+	audiopositionT1=document.getElementById("audiopositionTomp1");
+	volumesetT1=document.getElementById("volumesetTomp1");
+	Tomp1M=document.getElementById("Tomp1M");
+	Tomp1S=document.getElementById("Tomp1S");
+	Tomp1B=document.getElementById("Tomp1B");
+
+	// When to implement functions	
+	playT1.addEventListener("click", playPauseT1);
+	muteT1.addEventListener("click", muteUnmuteT1);
+	audiopositionT1.addEventListener("mousedown", function(event) { searchingT1=true; setPositionT1(event);});
+	audiopositionT1.addEventListener("mousemove", function(event) { setPositionT1(event);});
+	audiopositionT1.addEventListener("mouseup", function() { searchingT1=false; });
+	volumesetT1.addEventListener("mousemove", setVolumeT1);
+	Tomp1M.addEventListener("timeupdate", timeupdateT1);
+
+	// Functions
+	function playPauseT1() {
+		if(Tomp1M.paused && Tomp1S.paused && Tomp1B.paused) {
+			Tomp1M.play();
+			Tomp1S.play();
+			Tomp1B.play();
+			playT1.style.background = "url(Pics/Pause.png) no-repeat";
+		} else { 
+			Tomp1M.pause();
+			Tomp1S.pause();
+			Tomp1B.pause();
+			playT1.style.background = "url(Pics/Play.png) no-repeat";
+		}
+	}	
+
+	function muteUnmuteT1() {
+		if (Tomp1M.muted && Tomp1S.muted && Tomp1B.muted) {
+			Tomp1M.muted=false;
+			Tomp1S.muted=false;
+			Tomp1B.muted=false;
+			muteT1.style.background = "url(Pics/Unmute.png) no-repeat";
+		} else {
+			Tomp1M.muted=true;
+			Tomp1S.muted=true;
+			Tomp1B.muted=true;
+			muteT1.style.background = "url(Pics/Mute.png) no-repeat";
+		}
+
+	}	
+	
+	function ChangeMT1() {
+		if (muteT1.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnT1.style.background= "url(Pics/MonoYes.png) no-repeat";
+			StereobtnT1.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnT1.style.background= "url(Pics/Binaural.png) no-repeat";
+			Tomp1M.muted=false;
+			Tomp1S.muted=true;
+			Tomp1B.muted=true;
+		} else {
+			Tomp1M.muted=true;
+			Tomp1S.muted=true;
+			Tomp1B.muted=true;
+		}
+	}
+
+	function ChangeST1() {
+		if (muteT1.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnT1.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnT1.style.background= "url(Pics/StereoYes.png) no-repeat";
+			BinauralbtnT1.style.background= "url(Pics/Binaural.png) no-repeat";
+			Tomp1M.muted=true;
+			Tomp1S.muted=false;
+			Tomp1B.muted=true;
+		} else {
+			Tomp1M.muted=true;
+			Tomp1S.muted=true;
+			Tomp1B.muted=true;
+		}
+	}
+
+	
+	function ChangeBT1() {
+		if (muteT1.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnT1.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnT1.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnT1.style.background= "url(Pics/BinauralYes.png) no-repeat";
+			Tomp1M.muted=true;
+			Tomp1S.muted=true;
+			Tomp1B.muted=false;
+		} else {
+			Tomp1M.muted=true;
+			Tomp1S.muted=true;
+			Tomp1B.muted=true;
+		}
+	}
+	
+	function setVolumeT1() {
+		Tomp1M.volume = volumesetT1.value/100;
+		Tomp1S.volume = volumesetT1.value/100;
+		Tomp1B.volume = volumesetT1.value/100;
+	}
+
+	function setPositionT1(event) {
+		if (searchingT1==true) {
+			audiopositionT1.value = event.clientX  - audiopositionT1.offsetLeft; 
+			newpositionT1 = Tomp1M.duration * (audiopositionT1.value/300);
+			Tomp1M.currentTime = newpositionT1;
+			Tomp1S.currentTime = newpositionT1;
+			Tomp1B.currentTime = newpositionT1;
+	
+		}
+	}
+	function timeupdateT1() {
+		ntT1 = Tomp1M.currentTime * (300/Tomp1M.duration);
+		audiopositionT1.value = ntT1; 
+		
+	}
+
+
+
+		// Defining Variables
+	playT2=document.getElementById("playpauseTomp2");
+	muteT2=document.getElementById("muteTomp2");
+	audiopositionT2=document.getElementById("audiopositionTomp2");
+	volumesetT2=document.getElementById("volumesetTomp2");
+	Tomp2M=document.getElementById("Tomp2M");
+	Tomp2S=document.getElementById("Tomp2S");
+	Tomp2B=document.getElementById("Tomp2B");
+
+	// When to implement functions	
+	playT2.addEventListener("click", playPauseT2);
+	muteT2.addEventListener("click", muteUnmuteT2);
+	audiopositionT2.addEventListener("mousedown", function(event) { searchingT2=true; setPositionT2(event);});
+	audiopositionT2.addEventListener("mousemove", function(event) { setPositionT2(event);});
+	audiopositionT2.addEventListener("mouseup", function() { searchingT2=false; });
+	volumesetT2.addEventListener("mousemove", setVolumeT2);
+	Tomp2M.addEventListener("timeupdate", timeupdateT2);
+
+	// Functions
+	function playPauseT2() {
+		if(Tomp2M.paused && Tomp2S.paused && Tomp2B.paused) {
+			Tomp2M.play();
+			Tomp2S.play();
+			Tomp2B.play();
+			playT2.style.background = "url(Pics/Pause.png) no-repeat";
+		} else { 
+			Tomp2M.pause();
+			Tomp2S.pause();
+			Tomp2B.pause();
+			playT2.style.background = "url(Pics/Play.png) no-repeat";
+		}
+	}	
+
+	function muteUnmuteT2() {
+		if (Tomp2M.muted && Tomp2S.muted && Tomp2B.muted) {
+			Tomp2M.muted=false;
+			Tomp2S.muted=false;
+			Tomp2B.muted=false;
+			muteT2.style.background = "url(Pics/Unmute.png) no-repeat";
+		} else {
+			Tomp2M.muted=true;
+			Tomp2S.muted=true;
+			Tomp2B.muted=true;
+			muteT2.style.background = "url(Pics/Mute.png) no-repeat";
+		}
+
+	}	
+	
+	function ChangeMT2() {
+		if (muteT2.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnT2.style.background= "url(Pics/MonoYes.png) no-repeat";
+			StereobtnT2.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnT2.style.background= "url(Pics/Binaural.png) no-repeat";
+			Tomp2M.muted=false;
+			Tomp2S.muted=true;
+			Tomp2B.muted=true;
+		} else {
+			Tomp2M.muted=true;
+			Tomp2S.muted=true;
+			Tomp2B.muted=true;
+		}
+	}
+
+	function ChangeST2() {
+		if (muteT2.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnT2.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnT2.style.background= "url(Pics/StereoYes.png) no-repeat";
+			BinauralbtnT2.style.background= "url(Pics/Binaural.png) no-repeat";
+			Tomp2M.muted=true;
+			Tomp2S.muted=false;
+			Tomp2B.muted=true;
+		} else {
+			Tomp2M.muted=true;
+			Tomp2S.muted=true;
+			Tomp2B.muted=true;
+		}
+	}
+
+	
+	function ChangeBT2() {
+		if (muteT2.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnT2.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnT2.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnT2.style.background= "url(Pics/BinauralYes.png) no-repeat";
+			Tomp2M.muted=true;
+			Tomp2S.muted=true;
+			Tomp2B.muted=false;
+		} else {
+			Tomp2M.muted=true;
+			Tomp2S.muted=true;
+			Tomp2B.muted=true;
+		}
+	}
+	
+	function setVolumeT2() {
+		Tomp2M.volume = volumesetT2.value/100;
+		Tomp2S.volume = volumesetT2.value/100;
+		Tomp2B.volume = volumesetT2.value/100;
+	}
+
+	function setPositionT2(event) {
+		if (searchingT2==true) {
+			audiopositionT2.value = event.clientX  - audiopositionT2.offsetLeft; 
+			newpositionT2 = Tomp2M.duration * (audiopositionT2.value/300);
+			Tomp2M.currentTime = newpositionT2;
+			Tomp2S.currentTime = newpositionT2;
+			Tomp2B.currentTime = newpositionT2;
+	
+		}
+	}
+	function timeupdateT2() {
+		ntT2 = Tomp2M.currentTime * (300/Tomp2M.duration);
+		audiopositionT2.value = ntT2; 
+		
+	}
+
+	
+	// Defining Variables
+	playW1=document.getElementById("playpauseW1");
+	muteW1=document.getElementById("muteWash1");
+	audiopositionW1=document.getElementById("audiopositionWash1");
+	volumesetW1=document.getElementById("volumesetWash1");
+	Wash1M=document.getElementById("Wash1M");
+	Wash1S=document.getElementById("Wash1S");
+	Wash1B=document.getElementById("Wash1B");
+
+	// When to implement functions	
+	playW1.addEventListener("click", playPauseW1);
+	muteW1.addEventListener("click", muteUnmuteW1);
+	audiopositionW1.addEventListener("mousedown", function(event) { searchingW1=true; setPositionW1(event);});
+	audiopositionW1.addEventListener("mousemove", function(event) { setPositionW1(event);});
+	audiopositionW1.addEventListener("mouseup", function() { searchingW1=false; });
+	volumesetW1.addEventListener("mousemove", setVolumeW1);
+	Wash1M.addEventListener("timeupdate", timeupdateW1);
+
+	// Functions
+	function playPauseW1() {
+		if(Wash1M.paused && Wash1S.paused && Wash1B.paused) {
+			Wash1M.play();
+			Wash1S.play();
+			Wash1B.play();
+			playW1.style.background = "url(Pics/Pause.png) no-repeat";
+		} else { 
+			Wash1M.pause();
+			Wash1S.pause();
+			Wash1B.pause();
+			playW1.style.background = "url(Pics/Play.png) no-repeat";
+		}
+	}	
+
+	function muteUnmuteW1() {
+		if (Wash1M.muted && Wash1S.muted && Wash1B.muted) {
+			if (MonobtnW1.style.background = "url/Pics/MonoYes.png) no-repeat"){
+				Wash1M.muted=false;
+				Wash1S.muted=true;
+				Wash1B.muted=true;
+				muteW1.style.background = "url(Pics/Unmute.png) no-repeat";
+			} else if (StereobtnW1.style.background = "url/Pics/StereoYes.png) no-repeat"){
+				Wash1M.muted=true;
+				Wash1S.muted=false;
+				Wash1B.muted=true;
+				muteW1.style.background = "url(Pics/Unmute.png) no-repeat";
+			} else if (BinauralbtnW1.style.background = "url/Pics/BinauralYes.png) no-repeat"){
+				Wash1M.muted=true;
+				Wash1S.muted=true;
+				Wash1B.muted=false;
+				muteW1.style.background = "url(Pics/Unmute.png) no-repeat";
+			}	
+		} else {
+			Wash1M.muted=true;
+			Wash1S.muted=true;
+			Wash1B.muted=true;
+			muteW1.style.background = "url(Pics/Mute.png) no-repeat";
+		}
+
+	}	
+
+	
+	function ChangeMW1() {
+		if (muteW1.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnW1.style.background= "url(Pics/MonoYes.png) no-repeat";
+			StereobtnW1.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnW1.style.background= "url(Pics/Binaural.png) no-repeat";
+			Wash1M.muted=false;
+			Wash1S.muted=true;
+			Wash1B.muted=true;
+		} else {
+			Wash1M.muted=true;
+			Wash1S.muted=true;
+			Wash1B.muted=true;
+		}
+	}
+
+	function ChangeSW1() {
+		if (muteW1.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnW1.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnW1.style.background= "url(Pics/StereoYes.png) no-repeat";
+			BinauralbtnW1.style.background= "url(Pics/Binaural.png) no-repeat";
+			Wash1M.muted=true;
+			Wash1S.muted=false;
+			Wash1B.muted=true;
+		} else {
+			Wash1M.muted=true;
+			Wash1S.muted=true;
+			Wash1B.muted=true;
+		}
+	}
+
+	
+	function ChangeBW1() {
+		if (muteW1.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnW1.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnW1.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnW1.style.background= "url(Pics/BinauralYes.png) no-repeat";
+			Wash1M.muted=true;
+			Wash1S.muted=true;
+			Wash1B.muted=false;
+		} else {
+			Wash1M.muted=true;
+			Wash1S.muted=true;
+			Wash1B.muted=true;
+		}
+	}
+	
+	function setVolumeW1() {
+		Wash1M.volume = volumesetW1.value/100;
+		Wash1S.volume = volumesetW1.value/100;
+		Wash1B.volume = volumesetW1.value/100;
+	}
+
+	function setPositionW1(event) {
+		if (searchingW1==true) {
+			audiopositionW1.value = event.clientX  - audiopositionW1.offsetLeft; 
+			newpositionW1 = Wash1M.duration * (audiopositionW1.value/300);
+			Wash1M.currentTime = newpositionW1;
+			Wash1S.currentTime = newpositionW1;
+			Wash1B.currentTime = newpositionW1;
+	
+		}
+	}
+	function timeupdateW1() {
+		ntW1 = Wash1M.currentTime * (300/Wash1M.duration);
+		audiopositionW1.value = ntW1; 
+		
+	}
+
+	// Defining Variables
+	playW2=document.getElementById("playpauseW2");
+	muteW2=document.getElementById("muteWash2");
+	audiopositionW2=document.getElementById("audiopositionWash2");
+	volumesetW2=document.getElementById("volumesetWash2");
+	Wash2M=document.getElementById("Wash2M");
+	Wash2S=document.getElementById("Wash2S");
+	Wash2B=document.getElementById("Wash2B");
+
+	// When to implement functions	
+	playW2.addEventListener("click", playPauseW2);
+	muteW2.addEventListener("click", muteUnmuteW2);
+	audiopositionW2.addEventListener("mousedown", function(event) { searchingW2=true; setPositionW2(event);});
+	audiopositionW2.addEventListener("mousemove", function(event) { setPositionW2(event);});
+	audiopositionW2.addEventListener("mouseup", function() { searchingW2=false; });
+	volumesetW2.addEventListener("mousemove", setVolumeW2);
+	Wash2M.addEventListener("timeupdate", timeupdateW2);
+
+	// Functions
+	function playPauseW2() {
+		if(Wash2M.paused && Wash2S.paused && Wash2B.paused) {
+			Wash2M.play();
+			Wash2S.play();
+			Wash2B.play();
+			playW2.style.background = "url(Pics/Pause.png) no-repeat";
+		} else { 
+			Wash2M.pause();
+			Wash2S.pause();
+			Wash2B.pause();
+			playW2.style.background = "url(Pics/Play.png) no-repeat";
+		}
+	}	
+
+	function muteUnmuteW2() {
+		if (Wash2M.muted && Wash2S.muted && Wash2B.muted) {
+			Wash2M.muted=false;
+			Wash2S.muted=false;
+			Wash2B.muted=false;
+			muteW2.style.background = "url(Pics/Unmute.png) no-repeat";
+		} else {
+			Wash2M.muted=true;
+			Wash2S.muted=true;
+			Wash2B.muted=true;
+			muteW2.style.background = "url(Pics/Mute.png) no-repeat";
+		}
+
+	}	
+	
+	function ChangeMW2() {
+		if (muteW2.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnW2.style.background= "url(Pics/MonoYes.png) no-repeat";
+			StereobtnW2.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnW2.style.background= "url(Pics/Binaural.png) no-repeat";
+			Wash2M.muted=false;
+			Wash2S.muted=true;
+			Wash2B.muted=true;
+		} else {
+			Wash2M.muted=true;
+			Wash2S.muted=true;
+			Wash2B.muted=true;
+		}
+	}
+
+	function ChangeSW2() {
+		if (muteW2.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnW2.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnW2.style.background= "url(Pics/StereoYes.png) no-repeat";
+			BinauralbtnW2.style.background= "url(Pics/Binaural.png) no-repeat";
+			Wash2M.muted=true;
+			Wash2S.muted=false;
+			Wash2B.muted=true;
+		} else {
+			Wash2M.muted=true;
+			Wash2S.muted=true;
+			Wash2B.muted=true;
+		}
+	}
+
+	
+	function ChangeBW2() {
+		if (muteW2.style.background = "url(Pics/Unmute.png) no-repeat") {
+			MonobtnW2.style.background= "url(Pics/Mono.png) no-repeat";
+			StereobtnW2.style.background= "url(Pics/Stereo.png) no-repeat";
+			BinauralbtnW2.style.background= "url(Pics/BinauralYes.png) no-repeat";
+			Wash2M.muted=true;
+			Wash2S.muted=true;
+			Wash2B.muted=false;
+		} else {
+			Wash2M.muted=true;
+			Wash2S.muted=true;
+			Wash2B.muted=true;
+		}
+	}
+	
+	function setVolumeW2() {
+		Wash2M.volume = volumesetW2.value/100;
+		Wash2S.volume = volumesetW2.value/100;
+		Wash2B.volume = volumesetW2.value/100;
+	}
+
+	function setPositionW2(event) {
+		if (searchingW2==true) {
+			audiopositionW2.value = event.clientX  - audiopositionW2.offsetLeft; 
+			newpositionW2 = Wash2M.duration * (audiopositionW2.value/300);
+			Wash2M.currentTime = newpositionW2;
+			Wash2S.currentTime = newpositionW2;
+			Wash2B.currentTime = newpositionW2;
+	
+		}
+	}
+	function timeupdateW2() {
+		ntW2 = Wash2M.currentTime * (300/Wash2M.duration);
+		audiopositionW2.value = ntW2; 
+		
+	}
+
+
+}	
+window.addEventListener("load", initAudioPlayer);
+</script>
+
+
+<center><h1>Audio Recordings of New York City Squares</h1></center>
+<center><h3>Exploring the Spatial Character of Field Recordings</h2></center>
+<h4> Description: </h3>This project allows listeners to explore the soundscapes of three iconic New York City Squares (Tompkins Square, Union Square, and Washington Square).<br> Listeners can switch between Mono, Stereo, and Binaural recordings to see how the representation of sound in the space changes with each recording technique. <br>Each set of recordings is accompanied by a snapshot to give the lister a visual context to the sounds happening around them. <br>While the photo will provide some context, the audio will lead the way in telling the story. <br><br> <b>Mono</b> recording was captured with one dynamic microphone facing straight ahead (from perspective of the image). <br><br> <b>Stereo</b> recording was captured with two condenser microphone capsules in an XY configuration (left facing 45 degrees to left from straight ahead, right facing 45 degrees to right from straight ahead).<br><br> <b>Binaural</b> recordings were captured using a Sennheiser Ambeo headset with a omni direction microphone capsule placed in each ear. This is meant to record in the same way our ears naturally capture sound. <br><br><b> In order to get the full spatial effect, you must listen to the audio over headphones!</b>
+
+
+<audio id="Tomp2M" loop>
+ 	<source src="Audio/Tomp2M.mp3">
+	<source src="Audio/Tomp2M.ogg">	
+</audio>
+<audio id="Tomp2S" loop muted>
+	<source src="Audio/Tomp2S.mp3">
+	<source src="Audio/Tomp2S.ogg">
+</audio>
+<audio id="Tomp2B" loop muted>
+	<source src="Audio/Tomp2B.mp3">
+	<source src="Audio/Tomp2B.ogg">
+</audio>
+<br><br><br>
+<center><h3>Grass Field in Tompkins Square Park: Concert Performance to the Right (out of picture)</h3>
+<center><img src="Pics/Tomp2.JPG" alt="Tompkins Square: Concert in the Park" style="width:600px;height:450px;"></center>
+
+
+<center>
+<button id="playpauseTomp2"></button>
+<input id="audiopositionTomp2"  type="range" min="0" max="300" value="0" step="1">
+<input id="volumesetTomp2"  type="range" min="0" max="100" value="100" step="1">	
+<button id="muteTomp2"></button>
+</center>
+
+<center>
+<button id="MonobtnT2"></button>
+
+<button id="StereobtnT2"></button>
+
+<button id="BinauralbtnT2"></button>
+</center>
+
+
+
+<audio id="Tomp1M" loop>
+ 	<source src="Audio/Tomp1M.mp3">
+	<source src="Audio/Tomp1M.ogg">	
+</audio>
+<audio id="Tomp1S" loop muted>
+	<source src="Audio/Tomp1S.mp3">
+	<source src="Audio/Tomp1S.ogg">
+</audio>
+<audio id="Tomp1B" loop muted>
+	<source src="Audio/Tomp1B.mp3">
+	<source src="Audio/Tomp1B.ogg">
+</audio>
+<br><br><br>
+<center><h3>Blacktop Rec Space in Tompkins Square Park: Skateboarders Practicing Their Moves</h3>
+
+<center><img src="Pics/Tomp1.JPG" alt="Tompkins Square: Skateboarders" style="width:600px;height:450px;"></center>
+
+
+<center>
+<button id="playpauseTomp1"></button>
+<input id="audiopositionTomp1"  type="range" min="0" max="300" value="0" step="1">
+<input id="volumesetTomp1"  type="range" min="0" max="100" value="100" step="1">	
+<button id="muteTomp1"></button>
+</center>
+
+<center>
+<button id="MonobtnT1"></button>
+
+<button id="StereobtnT1"></button>
+
+<button id="BinauralbtnT1"></button>
+</center>
+
+<audio id="UnionM" loop>
+ 	<source src="Audio/UnionMono.mp3">	
+	<source src="Audio/UnionMono.ogg">	
+</audio>
+<audio id="UnionS" loop muted>
+	<source src="Audio/UnionStereo.mp3">
+	<source src="Audio/UnionStereo.ogg">
+</audio>
+<audio id="UnionB" loop muted>
+	<source src="Audio/UnionBinaural.mp3">
+	<source src="Audio/UnionBinaural.ogg">
+</audio>
+<br><br><br>
+<center><h3>Edge of Union Square by the Subway Stop</h3>
+
+<center><img src="Pics/Union.JPG" alt="Union Square" style="width:600px;height:450px;"></center>
+
+
+<center>
+<button id="playpauseUnion"></button>
+<input id="audiopositionUnion"  type="range" min="0" max="300" value="0" step="1">
+<input id="volumesetUnion"  type="range" min="0" max="100" value="100" step="1">	
+<button id="muteUnion"></button>
+</center>
+
+<center>
+<button id="MonobtnU"></button>
+
+<button id="StereobtnU"></button>
+
+<button id="BinauralbtnU"></button>
+</center>
+
+<center>
+<audio id="Wash1M" loop>
+ 	<source src="Audio/Wash1M.mp3">
+	<source src="Audio/Wash1M.ogg">
+</audio>
+<audio id="Wash1S" loop muted>
+	<source src="Audio/Wash1S.mp3">
+	<source src="Audio/Wash1S.ogg">
+</audio>
+<audio id="Wash1B" loop muted>
+	<source src="Audio/Wash1B.mp3">
+	<source src="Audio/Wash1B.ogg">
+</audio>
+<br><br><br>
+<center><h3>The Fountain in Washington Square Park: Percussion Performance Behind the Water</h3>
+
+<center><img src="Pics/Wash1.JPG" alt="Washington Square Perspective 1" style="width:600px;height:450px;"></center>
+
+<center>
+<button id="playpauseW1"></button>
+<input id="audiopositionWash1"  type="range" min="0" max="300" value="0" step="1">
+<input id="volumesetWash1"  type="range" min="0" max="100" value="100" step="1">	
+<button id="muteWash1"></button>
+</center>
+
+<center>
+<button id="MonobtnW1"></button>
+
+<button id="StereobtnW1"></button>
+
+<button id="BinauralbtnW1"></button>
+</center>
+
+
+
+<center>
+<audio id="Wash2M" loop>
+ 	<source src="Audio/Wash2M.mp3">
+	<source src="Audio/Wash2M.ogg">
+</audio>
+<audio id="Wash2S" loop muted>
+	<source src="Audio/Wash2S.mp3">
+	<source src="Audio/Wash2S.ogg">
+</audio>
+<audio id="Wash2B" loop muted>
+	<source src="Audio/Wash2B.mp3">
+	<source src="Audio/Wash2B.ogg">
+</audio>
+<br><br><br>
+<center><h3>Bench in Washington Square Park: Same Percussion Performance to the Right (distant)</h3>
+
+<center><img src="Pics/Wash2.JPG" alt="Washington Square Perspective 2" style="width:600px;height:450px;"></center>
+
+<center>
+<button id="playpauseW2"></button>
+<input id="audiopositionWash2"  type="range" min="0" max="300" value="0" step="1">
+<input id="volumesetWash2"  type="range" min="0" max="100" value="100" step="1">	
+<button id="muteWash2"></button>
+</center>
+
+<center>
+<button id="MonobtnW2"></button>
+
+<button id="StereobtnW2"></button>
+
+<button id="BinauralbtnW2"></button>
+</center>
+
+
+
+
+<br><br><br>Henry Butler
+
+
+	</body>
+</html>
